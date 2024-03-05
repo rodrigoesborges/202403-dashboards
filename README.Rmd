@@ -14,33 +14,33 @@ knitr::opts_chunk$set(
 library(magrittr)
 
 main_repo <- "main-dashboards"
-turma <- "202109-dashboards"
+turma <- "202403-dashboards"
 num_aula <- 7
 ```
 
 ## Referências do curso
 
-[Clique aqui](https://github.com/curso-r/main-dashboards/raw/master/material_do_curso.zip) para baixar o material do curso.
+[Clique aqui](https://github.com/rodrigoesborges/main-dashboards/raw/master/material_do_curso.zip) para baixar o material do curso.
 
 - R for Data Science: [https://r4ds.had.co.nz/](https://r4ds.had.co.nz/) (em inglês) e [https://es.r4ds.hadley.nz/](https://es.r4ds.hadley.nz/) (em espanhol).
 
-- Nosso blog: [https://curso-r.com/blog/](https://curso-r.com/blog/)
+- Nosso blog: [https://rodrigoesborges.com/blog/](https://rodrigoesborges.com/blog/)
 
 ## Dúvidas
 
 Fora do horário de aula ou monitoria:
 
-- perguntas gerais sobre o curso deverão ser feitas no Classroom.
+- perguntas gerais sobre o curso deverão ser feitas no AVA .
 
-- perguntas sobre R, principalmente as que envolverem código, deverão ser enviadas no [nosso fórum](https://discourse.curso-r.com/).
+- perguntas sobre R, principalmente as que envolverem código, deverão ser enviadas no [nosso fórum](https://cursos.borges.net.br/).
 
 ## Slides
 
 ```{r}
 knitr::kable(
   tibble::tibble(
-    slide = CursoRutils:::list_github_files(main_repo, "slides/", "html$"),
-    HTML = paste0("https://curso-r.github.io/", main_repo, "/", slide)
+    slide = CursoRopen:::list_github_files(main_repo, "slides/", "html$",owner="rodrigoesborges"),
+    HTML = paste0("https://rodrigoesborges.github.io/", main_repo, "/", slide)
   ) %>%
     dplyr::filter(!stringr::str_detect(slide, "_files/")) %>% 
     dplyr::mutate(
@@ -61,19 +61,19 @@ pasta <- "pratica/"
 knitr::kable(
   tibble::tibble(
     script = list.files(pasta, pattern = "R$"),
-    link = paste0("https://curso-r.github.io/", turma, "/", pasta, script)
+    link = paste0("https://rodrigoesborges.github.io/", turma, "/", pasta, script)
   ) |> 
     tibble::add_row(
       script = "Exemplo módulos 1",
-      link = "https://github.com/curso-r/202109-dashboards/tree/master/pratica/21-modulos-1"
+      link = "https://github.com/rodrigoesborges/202403-dashboards/tree/master/pratica/21-modulos-1"
     ) |> 
     tibble::add_row(
       script = "Exemplo módulos 2",
-      link = "https://github.com/curso-r/202109-dashboards/tree/master/pratica/22-modulos-2"
+      link = "https://github.com/rodrigoesborges/202403-dashboards/tree/master/pratica/22-modulos-2"
     ) |> 
     tibble::add_row(
       script = "Exemplo módulos 3",
-      link = "https://github.com/curso-r/202109-dashboards/tree/master/pratica/22-modulos-2/versao-completa-purrr"
+      link = "https://github.com/rodrigoesborges/202403-dashboards/tree/master/pratica/22-modulos-2/versao-completa-purrr"
     )
 )
 ```
@@ -85,7 +85,7 @@ pasta <- "exercicios/"
 knitr::kable(
   tibble::tibble(
     script = list.files(pasta, pattern = "^[0-9].*\\.R$"),
-    link = paste0("https://curso-r.github.io/", turma, "/", pasta, script)
+    link = paste0("https://rodrigoesborges.github.io/", turma, "/", pasta, script)
   ) %>% 
     dplyr::slice(1:13)
 ) 
@@ -98,7 +98,7 @@ pasta <- "exercicios/"
 knitr::kable(
   tibble::tibble(
     script = list.files(pasta, pattern = "^extra.*\\.R$"),
-    link = paste0("https://curso-r.github.io/", turma, "/", pasta, script)
+    link = paste0("https://rodrigoesborges.github.io/", turma, "/", pasta, script)
   ) %>% 
     dplyr::slice(1:11)
 ) 
@@ -116,7 +116,7 @@ readxl::read_excel("referencias_extras.xlsx") %>%
 ```
 
 
-## Redes sociais da Curso-R
+## Redes sociais da rodrigoesborges
 
 Instagram: https://www.instagram.com/cursoo_r/
 
@@ -124,6 +124,6 @@ Twitter: https://twitter.com/curso_r
 
 Instagram: https://www.youtube.com/c/CursoR6/featured
 
-Linkedin: https://www.linkedin.com/company/curso-r/
+Linkedin: https://www.linkedin.com/company/rodrigoesborges/
 
 Facebook: https://www.facebook.com/cursodeR
